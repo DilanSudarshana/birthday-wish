@@ -1,5 +1,5 @@
 window.Fx=(()=>{const c=document.getElementById('fx'),x=c.getContext('2d'),R=Math.random,RM=matchMedia('(prefers-reduced-motion:reduce)').matches;let W,H,D,t=0,ga=0,bolt=null;
-function size(){D=Math.min(devicePixelRatio||1,2);W=c.width=innerWidth*D;H=c.height=innerHeight*D}addEventListener('resize',size);size();
+function size(){D=Math.min(devicePixelRatio||1,innerWidth<700?1.5:2);W=c.width=innerWidth*D;H=c.height=innerHeight*D}addEventListener('resize',size);size();
 const N=innerWidth<700?220:420,rain=Array.from({length:N},()=>({x:R()*1.3-.15,y:R(),z:R()})),P=[],drops=[],em={petals:0,gold:0,hearts:0},gulls=Array.from({length:5},(_,i)=>({x:R(),y:.1+R()*.2,v:.03+R()*.03,p:R()*9}));
 const add=o=>{if(P.length<650)P.push({life:0,max:2,vx:0,vy:0,g:0,size:4,rot:0,vr:0,type:'dot',c:'255,215,120',...o})};
 const PAL=['255,215,120','255,150,170','150,200,255','255,255,255'];
